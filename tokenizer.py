@@ -1,6 +1,5 @@
 import re
 
-
 KEYWORDS = {'int', 'float', 'char', 'return', 'if', 'else', 'while', 'for', 'main'}
 OPERATORS = {'+', '-', '*', '/', '=', '==', '!=', '<', '>', '<=', '>=', '&&', '||'}
 DELIMITERS = {'(', ')', '{', '}', '[', ']', ';', ','}
@@ -23,7 +22,6 @@ patterns = [
 
 all_patterns = '|'.join(f'(?P<{name}>{pattern})' for name, pattern in patterns)
 regex = re.compile(all_patterns)
-
 
 def tokenize(code):
     tokens = []
@@ -64,7 +62,6 @@ def tokenize(code):
 def show(tokens):
     for line, type_, value in tokens:
         print(f"Line {line:3}: {type_:12} -> {value}")
-
 
 if __name__ == "__main__":
     code = '''
